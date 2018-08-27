@@ -1,0 +1,7 @@
+<%= form_for(@course) do |f| %> <!-- crea una forma y los campos donde se puede llenar información-->
+  <%= f.label :name %>
+  <%= f.text_field :name%><br/>
+  <%= f.label :description%>
+  <%= f.text_area :description%><br/>
+  <%= f.submit "Guardar"%>
+<%end%>
