@@ -1,0 +1,9 @@
+<%= form_for [@course, @material] do |f| %> <!-- marca la relación entre curso y material -->
+  <%= f.label :name %>
+  <%= f.text_field :name %><br/>
+  <%= f.label :description %>
+  <%= f.text_area :description %><br/>
+  <%= f.label :file %>
+  <%= f.text_field :file %><br/>
+  <%= f.submit "Guardar" %>
+<% end %>
