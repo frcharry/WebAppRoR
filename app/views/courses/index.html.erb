@@ -1,4 +1,4 @@
-<%= link_to "Nuevo Curso", new_course_path %><br/>
+<%= link_to "Nuevo Curso", new_course_path %><br/> <!-- Link a la creación de un nuevo curso new.html.erb -->
 <% @courses.each do |course| %> <!-- La variable @courses tiene todo los cursos que se creen-->
-  <%= link_to course.name, course %><br/> <!-- El course después de la "," indica que queremos ir a la página de ese curso -->
+  <%= link_to course.name, course %><br/> <!-- El course después de la "," indica que queremos ir a la página de ese curso, al dar clic lleva a show.-->
 <% end %>
