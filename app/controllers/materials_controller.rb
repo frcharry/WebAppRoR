@@ -16,6 +16,8 @@ class MaterialsController < ApplicationController
     end
   end
   def show
+    @course=Course.find(params[:course_id])
+    @material=@course.materials.find(params[:id])
   end
   def edit
   end

@@ -4,7 +4,11 @@ en la creación.
 Trae el nombre del curso que estamos referenciando -->
 
 <h1><%= @course.name %></h1>
-<p><%= @course.description %></p>
+
+<%= link_to "Añadir material", new_course_material_path(@course) %><br/>
 <%= link_to "Editar", edit_course_path(@course)%> <br/> <!-- edit_course_path(@course) es un método del framework Rails que nos crea las URL's necesarias para poder editar nuestro objeto, le eviamos la variable @course a editar-->
 <%= link_to "Eliminar", course_path(@course), method: :delete, data: {confirm: "¿Está seguro? Esta acción no se puede deshacer"}%><br/> <!-- Crea un popup para la confirmación -->
-<%= link_to "Añadir material", new_course_material_path(@course) %><br/>
+<p><%= @course.description %></p><br/>
+<% @course.materials.each do |material| %> <!-- aquí estuvo el error pilas con %= y % -->
+  <%= link_to material.name, [@course,material]%><br/>
+<% end %>
